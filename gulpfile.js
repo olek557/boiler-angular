@@ -4,6 +4,13 @@ var minifyCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var notify = require('gulp-notify');
 var autoprefixer = require('gulp-autoprefixer');
+var sass = require('gulp-sass');
+
+gulp.task('sass', function(){
+	return gulp.src('./scss/**/*.scss')
+	.pipe(sass().on('error', sass.logError))
+	.pipe(gulp.dest('./css'));
+});
 
 gulp.task('default', function () {
   return gulp.src('css/**/*.css')
@@ -16,5 +23,6 @@ gulp.task('default', function () {
 });
 
 gulp.task('watch', function(){
-  gulp.watch('css/*.css', ['default']);
+  gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('css/**/*.css', ['default']);
 })
