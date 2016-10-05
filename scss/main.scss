@@ -12,3 +12,14 @@ body {
 h1 {
 	font-size: 21px;
 }
+
+
+
+$dark: #333;
+
+.top-header {
+	width: 100%;
+	background-color: $dark;
+	height: 200px;
+}
+

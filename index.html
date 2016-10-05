@@ -4,9 +4,47 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" href="css/main.min.css">
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.js"></script>
 </head>
-<body ng-controller="">
-  <script type="text/javascript" src="js/angular.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
+<body>
+  <div ng-controller="AdviserController as adviser">
+  	{{adviser.film.name;}}
+  	{{adviser.film.rate;}}
+  	{{adviser.film.descr;}}
+  	{{adviser.film.director;}}
+  	<img ng-src="{{ adviser.film.poster_src }}" alt="">
+  </div>
+  <header class="top-header">
+  	<div class="aside-container">
+  		<div class="logo"></div>
+  		<div class="conpany-name"></div>
+  	</div>
+  	<div class="header--top-line">
+  		<ul class="menu-inline mod-with-dot-separator">
+  			<li></li>
+  			<li></li>
+  		</ul>
+  		<div class="push-left">
+  			<div class="user mod-small">
+  				<div class="user--avatar"></div>
+  				<div class="user--descr mod-right"></div>
+  			</div>
+  		</div>
+  	</div>	
+  	<div class="header--bottom-line">
+  		<ul class="tags-line">
+  			<li class="tag">One</li>
+  			<li class="tag">One</li>
+  			<li class="tag">One</li>
+  		</ul>
+  		<div class="push-right">
+  			<div class="input-holder search-form mod-with-icon">
+  				<input type="text">
+  				<span></span>
+  			</div>
+  		</div>
+  	</div>
+  </header>
 </body>
 </html>
