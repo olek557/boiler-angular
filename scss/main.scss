@@ -7,6 +7,7 @@ html {
 body {
   width: 100%;
   box-sizing: border-box;
+  margin: 0;
 }
 
 h1 {
@@ -23,3 +24,17 @@ $dark: #333;
 	height: 200px;
 }
 
+.menu-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-container {
+  width: calc(100% - 250px);
+  display: inline-block;
+}
+.aside-container {
+  width: 200px;
+  display: inline-block;
+}
