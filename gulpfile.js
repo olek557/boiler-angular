@@ -9,7 +9,11 @@ var sass = require('gulp-sass');
 gulp.task('sass', function(){
 	return gulp.src('./scss/**/*.scss')
 	.pipe(sass().on('error', sass.logError))
-	.pipe(gulp.dest('./css'));
+  .pipe(minifyCSS())
+  .pipe(rename('main.min.css'))
+	.pipe(gulp.dest('./css'))
+  .pipe(notify('Done'));
+
 });
 
 gulp.task('default', function () {
@@ -24,5 +28,5 @@ gulp.task('default', function () {
 
 gulp.task('watch', function(){
   gulp.watch('scss/**/*.scss', ['sass']);
-  gulp.watch('css/**/*.css', ['default']);
+  // gulp.watch('css/**/*.css', ['default']);
 })

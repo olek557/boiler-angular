@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" href="css/main.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
   <script src="js/angular.min.js"></script>
   <script src="js/app.js"></script>
 </head>
@@ -18,17 +20,19 @@
   <header class="top-header">
   	<div class="aside-container">
   		<div class="logo">
-        <img src="" alt="" width="100" height="100">
+        <img src="images/logo.png" alt="Logo" >
+  		  <div class="conpany-name">Moovie adviser</div>
       </div>
-  		<div class="conpany-name"></div>
   	</div>
     <div class="header-container">
-    	<div class="header--top-line">
+    	<div class="header--top-line mod-bordered-bottom">
     		<ul class="menu-inline mod-with-dot-separator">
-    			<li>One</li>
-    			<li>One</li>
+    			<li>
+            <a href="">Help Center</a></li>
+    			<li>
+            <a href="">Our Support</a></li>
     		</ul>
-    		<div class="push-left">
+    		<div class="pull-left">
     			<div class="user mod-small">
     				<div class="user--avatar"></div>
     				<div class="user--descr mod-right"></div>
@@ -37,14 +41,21 @@
     	</div>
     	<div class="header--bottom-line">
     		<ul class="tags-line">
-    			<li class="tag">One</li>
-    			<li class="tag">One</li>
-    			<li class="tag">One</li>
+    			<li class="tag active">
+            <a href="">All Videos</a></li>
+    			<li class="tag">
+            <a href="">Most Recent</a></li>
+          <li class="tag">
+            <a href="">Most Popular</a></li>
+          <li class="tag">
+            <a href="">Audio Sogns</a></li>
     		</ul>
-    		<div class="push-right">
+    		<div class="pull-right">
     			<div class="input-holder search-form mod-with-icon">
-    				<input type="text">
-    				<span></span>
+    				<input type="text" class="input-form mod-300" id="search-input" placeholder="Search">
+            <span class="input-icon">
+    				  <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
     			</div>
     		</div>
     	</div>

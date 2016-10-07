@@ -1,40 +1,147 @@
+$dark: #222428;
+$black: #020101;
+$orange: #ff3d00;
+$green: #46751c;
+$text_dark: #424c56;
+$text_lite: #646b7e;
+$input_bg: #333333;
+
+$padding: 25px;
+$container-padding: 40px;
+
+
 html {
-	min-height: 100%;
-	height: 100%;
-	width: 100%;
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
 }
 
 body {
   width: 100%;
   box-sizing: border-box;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
-	font-size: 21px;
+  font-size: 21px;
+}
+.input-holder {
+  position: relative;
+  .input-form {
+    border-radius: 50px;
+    background-color: $input_bg;
+    border: none;
+    padding: 10px 15px;
+    &.mod-300 {
+      width: 300px;
+    }
+  }
+  &.mod-with-icon {
+    display: inline-block;
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translate(0, -50%);
+      color: $text_lite;
+    }
+  }
 }
 
 
+a {
+  text-decoration: none;
+  color: $text_lite;
+}
 
-$dark: #333;
+.mod-bordered-bottom {
+  border-bottom: 1px solid #333;
+}
 
 .top-header {
 	width: 100%;
 	background-color: $dark;
-	height: 200px;
+	height: 135px;
 }
 
 .menu-inline {
   margin: 0;
   padding: 0;
   list-style: none;
+  li {
+    display: inline-block;
+  }
+  &.mod-with-dot-separator {
+    li + li {
+      &:before {
+        content: '・';
+        color: $text_lite;
+      }
+    }
+  }
 }
 
 .header-container {
-  width: calc(100% - 250px);
+  width: calc(100% - 255px);
   display: inline-block;
+  vertical-align: top;
+  height: 100%;
 }
 .aside-container {
-  width: 200px;
+  width: 250px;
   display: inline-block;
+  position: relative;
+  height: 100%;
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+  .conpany-name {
+    color: $orange;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+
+
+.header--top-line {
+  padding: $padding 0;
+  width: 100%;
+  .menu-inline {
+    font-size: 13px;
+    font-weight: 700;
+  }
+}
+
+.header--bottom-line {
+  padding-right: $container-padding;
+  width: 100%;
+  .search-form {
+    margin: $padding/2 0;
+  }
+}
+
+.tags-line {
+  padding: 0;
+  display: inline-block;
+  margin: $padding/2 0;
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 15px;
+    &.active {
+      background-color: $orange;
+      border-radius: 50px;
+      a {
+        color: #fff;
+      }
+    }
+  }  
 }
