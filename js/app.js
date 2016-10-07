@@ -1,9 +1,14 @@
 (function() {
  
-	var app = angular.module('adviser', []);
+	var app = angular.module('adviser', ['store-products']);
 
-	app.controller('AdviserController', function(){
-		this.film = film;
+
+	app.controller('AdviserController', function($http){
+		var films = this;
+		films.film = [];
+		$http.get('http://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/4').success(function() {
+			films.film = data;
+		});
 	});
 	var film = {
 		id: 001,
@@ -13,6 +18,5 @@
 		director: "David Fincher",
 		poster_src: "https://images-na.ssl-images-amazon.com/images/M/MV5BNGM2NjQxZTAtMmU5My00YTk5LWFmOWMtYjZlYzk4YzMwNjFlXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,666,1000_AL_.jpg",
 		trailer_src: "https://youtu.be/SUXWAEX2jlg"
-
 	}
 })();
