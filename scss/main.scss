@@ -5,6 +5,7 @@ $green: #46751c;
 $text_dark: #424c56;
 $text_lite: #646b7e;
 $input_bg: #333333;
+$board_color: #111418;
 
 $padding: 25px;
 $container-padding: 40px;
@@ -66,6 +67,7 @@ a {
 	width: 100%;
 	background-color: $dark;
 	height: 135px;
+  box-shadow: 1px 1px 1px #000;
 }
 
 .menu-inline {
@@ -114,7 +116,14 @@ a {
 
 .board-container {
   width: calc(100% - 250px);
-  background-color: $dark;
+  background-color: $board_color;
+  height: 100%;
+  min-height: 100%;
+  display: inline-block;
+  background-image: url('../images/bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 
 
@@ -128,7 +137,6 @@ a {
 }
 
 .header--bottom-line {
-  padding-right: $container-padding;
   width: 100%;
   .search-form {
     margin: $padding/2 0;
@@ -156,7 +164,8 @@ a {
 
 .main-side-menu {
   min-height: 100%;
-  background-color: $black;
+  background-color: $dark;
+  float: left;
   .main-side-item {
     width: 100%;
     padding: $padding/2;

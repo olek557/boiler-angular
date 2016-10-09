@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="adviser">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -10,13 +10,13 @@
   <script src="js/app.js"></script>
 </head>
 <body>
-<!--   <div ng-controller="AdviserController as adviser">
-  	{{adviser.film.name;}}
-  	{{adviser.film.rate;}}
-  	{{adviser.film.descr;}}
-  	{{adviser.film.director;}}
-  	<img ng-src="{{ adviser.film.poster_src }}" alt="">
-  </div> -->
+  <div ng-controller="AdviserController as adviser">
+  	{{adviser.films;}}
+  	{{adviser.films[0].title;}}
+  	{{adviser.films[0].year;}}
+  	{{adviser.films[0].writer;}}
+  	<!-- <img ng-src="{{ adviser.film.poster_src }}" alt=""> -->
+  </div>
   <header class="top-header">
   	<div class="aside-container">
   		<div class="logo">
