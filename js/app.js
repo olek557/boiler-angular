@@ -26,20 +26,18 @@
 
 angular.module('myApp', [])
   .controller('AdviserController', function($scope, $http){
-        $scope.items = []
+        $scope.items = {};
 
         $scope.getItems = function() {
-         $http({method : 'JONSP',url : 'http://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/4', headers: { 'Accept':'text/html'}})
-            .success(function(data, status) {
-                $scope.items = data;
-                console.log(data);
-             })
-            .error(function(data, status) {
-                alert("Error");
-            })
+         $http.get( "http://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/4")
+            .success(function(data){
+                $scope.items.item= data;
+            });
         }
+
         $scope.getItems();
 
+        console.log($scope.items); 
   });
 
 
