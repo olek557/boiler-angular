@@ -6,169 +6,192 @@ $text_dark: #424c56;
 $text_lite: #646b7e;
 $input_bg: #333333;
 $board_color: #111418;
-
 $padding: 25px;
 $container-padding: 40px;
-
-
 html {
-  min-height: 100%;
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
 }
 
 body {
-  min-height: 100%;
-  height: 1px;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
+    min-height: 100%;
+    height: 1px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
 }
 
 h1 {
-  font-size: 21px;
-}
-.input-holder {
-  position: relative;
-  .input-form {
-    border-radius: 50px;
-    background-color: $input_bg;
-    border: none;
-    padding: 10px 15px;
-    &.mod-300 {
-      width: 300px;
-    }
-  }
-  &.mod-with-icon {
-    display: inline-block;
-    .input-icon {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translate(0, -50%);
-      color: $text_lite;
-    }
-  }
+    font-size: 21px;
 }
 
+.input-holder {
+    position: relative;
+    .input-form {
+        border-radius: 50px;
+        background-color: $input_bg;
+        border: none;
+        padding: 10px 15px;
+        &.mod-300 {
+            width: 300px;
+        }
+    }
+    &.mod-with-icon {
+        display: inline-block;
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(0, -50%);
+            color: $text_lite;
+        }
+    }
+}
 
 a {
-  text-decoration: none;
-  color: $text_lite;
+    text-decoration: none;
+    color: $text_lite;
 }
 
 .mod-bordered-bottom {
-  border-bottom: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.mod-bordered-top {
+    border-top: 1px solid #333;
 }
 
 .top-header {
-	width: 100%;
-	background-color: $dark;
-	height: 135px;
-  box-shadow: 1px 1px 1px #000;
+    width: 100%;
+    background-color: $dark;
+    height: 135px;
+    box-shadow: 0 0px 28px -5px #000;
+    position: relative;
+    z-index: 999;
 }
 
 .menu-inline {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  li {
-    display: inline-block;
-  }
-  &.mod-with-dot-separator {
-    li + li {
-      &:before {
-        content: '・';
-        color: $text_lite;
-      }
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: inline-block;
     }
-  }
+    &.mod-with-dot-separator {
+        li + li {
+            &:before {
+                content: '・';
+                color: $text_lite;
+            }
+        }
+    }
 }
 
 .header-container {
-  width: calc(100% - 255px);
-  display: inline-block;
-  vertical-align: top;
-  height: 100%;
+    width: calc(100% - 255px);
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
 }
+
 .aside-container {
-  width: 250px;
-  display: inline-block;
-  position: relative;
-  height: 100%;
-  .logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-  }
-  .conpany-name {
-    color: $orange;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
+    width: 250px;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+    }
+    .conpany-name {
+        color: $orange;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
 }
 
 .board-container {
-  width: calc(100% - 250px);
-  background-color: $board_color;
-  height: 100%;
-  min-height: 100%;
-  display: inline-block;
-  background-image: url('../images/bg.png');
-  background-repeat: no-repeat;
-  background-position: center;
-
+    padding: $padding * 2;
+    width: calc(100% - 250px);
+    background-color: $board_color;
+    height: calc(100% - 135px);
+    display: inline-block;
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #222428;
+    }
+    &::-webkit-scrollbar {
+        width: 12px;
+        background-color: $board_color;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: $orange;
+    }
 }
 
-
 .header--top-line {
-  padding: $padding 0;
-  width: 100%;
-  .menu-inline {
-    font-size: 13px;
-    font-weight: 700;
-  }
+    padding: $padding 0;
+    width: 100%;
+    .menu-inline {
+        font-size: 13px;
+        font-weight: 700;
+    }
 }
 
 .header--bottom-line {
-  width: 100%;
-  .search-form {
-    margin: $padding/2 0;
-  }
+    width: 100%;
+    .search-form {
+        margin: $padding/2 0;
+    }
 }
 
 .tags-line {
-  padding: 0;
-  display: inline-block;
-  margin: $padding/2 0;
-  .tag {
+    padding: 0;
     display: inline-block;
-    font-size: 12px;
-    padding: 2px 15px;
-    &.active {
-      background-color: $orange;
-      border-radius: 50px;
-      a {
-        color: #fff;
-      }
+    margin: $padding/2 0;
+    .tag {
+        display: inline-block;
+        font-size: 12px;
+        padding: 2px 15px;
+        &.active {
+            background-color: $orange;
+            border-radius: 50px;
+            a {
+                color: #fff;
+            }
+        }
     }
-  }  
 }
 
-
 .main-side-menu {
-  min-height: 100%;
-  background-color: $dark;
-  float: left;
-  .main-side-item {
-    width: 100%;
-    padding: $padding/2;
-    text-align: center;
-  }
+    height: calc(100% - 135px);
+    background-color: $dark;
+    float: left;
+    padding-top: $padding;
+    .main-side-item {
+        max-width: 100%;
+        padding: $padding/2 0;
+        text-align: center;
+        & + .main-side-item {
+          @extend .mod-bordered-top;
+        }
+    }
 }
