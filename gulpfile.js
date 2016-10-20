@@ -5,6 +5,7 @@ var rename = require('gulp-rename');
 var notify = require('gulp-notify');
 var autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
+var webserver = require('gulp-webserver');
 
 gulp.task('sass', function(){
 	return gulp.src('./scss/**/*.scss')
@@ -14,6 +15,13 @@ gulp.task('sass', function(){
 	.pipe(gulp.dest('./css'))
   .pipe(notify('Done'));
 
+});
+
+gulp.task('webserver', function() {
+  gulp.src('app')
+    .pipe(webserver({
+      fallback: 'index.html'
+    }));
 });
 
 gulp.task('default', function () {

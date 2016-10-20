@@ -24,21 +24,42 @@
 
 'use strict';
 
-angular.module('myApp', [])
-  .controller('AdviserController', function($scope, $http){
-        $scope.items = {};
+var app = angular.module('myApp', []);
+var some = [];
 
-        $scope.getItems = function() {
-         $http.get( "http://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/4")
-            .success(function(data){
-                $scope.items.item= data;
-            });
-        }
+app.controller('AdviserController', function($scope, $http) {
+    $scope.items = {};
+    this.advise = $scope.items;
+    var advise = this.advise;
+    $scope.getItems = function() {
+     $http.get( "http://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/4")
+        .success(function(data){
+            $scope.items.item = data;
+        });
+    }
 
-        $scope.getItems();
+    $scope.getItems();
+    console.log(advise); 
 
-        console.log($scope.items); 
-  });
+
+});
+
+app.controller('MainCntl', function($scope, $http) {
+    // $scope.items = {};
+    // var copy;
+    // $scope.getItems = function() {
+    //  $http.get( "http://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/4")
+    //     .success(function(data){
+    //         $scope.items.item = data;
+    //         copy = Object.assign({}, $scope.items.item);
+    //             console.log(copy); 
+    //     });
+    // }
+    // $scope.getItems();
+    // console.log(copy);
+    // this.advise = $scope.items;
+});
+
 
 
     // function AdviserController($scope, $http) {
@@ -54,3 +75,4 @@ angular.module('myApp', [])
     //         })
     //     }
     // }
+
