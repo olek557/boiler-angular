@@ -9,7 +9,7 @@
   <script src="js/angular.min.js"></script>
   <script src="js/app.js"></script>
 </head>
-<body ng-controller="MainCntl">
+<body>
   <header class="top-header">
     <div class="aside-container">
       <div class="logo">
@@ -67,11 +67,11 @@
     <div ng-controller="AdviserController as adviser">
       <div class="movie-item">
         <div class="movie-poster">
-          <img ng-src="{{ adviser.advise.item.poster_url }}"/>
+          <img ng-src="{{ film.poster }}"/>
           <div class="overflow"></div>
         </div>
       </div>
-    	<!-- {{adviser.advise.item.poster;}} -->
+    	<h1>{{film.id}}</h1>
     </div>
   </div>
 </body>
