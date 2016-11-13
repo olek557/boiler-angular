@@ -11,12 +11,14 @@
 <div ng-controller="AdviserController as adviser">
   <div class="movie-item">
     <div class="movie-poster">
-      <img src="images/poster_database/4.jpg"/>
+      <img ng-src="{{ film.poster }}"/>
       <div class="overflow"></div>
     </div>
     <div class="movie-desr">
-      <h1>The Dark Knight</h1>
-      
+      <h1>{{ film.title }}</h1>
+      <div class="descr-text">
+        {{ film.plot }}
+      </div>
     </div>
   </div>
 

@@ -69,7 +69,7 @@ a {
     width: 100%;
     background-color: $dark;
     height: 135px;
-    box-shadow: 0 0px 28px -5px #000;
+    box-shadow: 0 0 7px -2px #000;
     position: relative;
     z-index: 999;
 }
@@ -196,12 +196,29 @@ a {
     }
 }
 
+.movie-item {
+    width: 100%;
+    background-color: rgba(256, 256, 256, 1);
+    height: 450px;
+}
+
+.movie-desr {
+    display: inline-block;
+    float: right;
+    width: calc(100% - 290px);
+    padding: 25px;
+    box-sizing: border-box;
+    .descr-text {
+
+    }
+}
 
 .movie-poster {
-    width: 500px;
-    height: 300px;
+    width: 290px;
+    height: 450px;
     position: relative;
     overflow: hidden;
+    display: inline-block;
     img {
         width: 100%;
         min-width: 100%;
@@ -210,8 +227,10 @@ a {
     .overflow {
         width: 100%;
         height: 100%;
-        background-color: #000;
-        opacity: .6;
+        background-image: url(../images/overlay.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: .8;
         position: absolute;
         top: 0;
         left: 0;
