@@ -14,12 +14,15 @@
       <img ng-src="{{ film.poster }}"/>
       <div class="overflow"></div>
     </div>
-    <div class="movie-desr">
-      <h1>{{ film.title }}</h1>
-      <div class="descr-text">
+    <div class="movie-info">
+      <h1 class="movie-title">{{ film.title }}</h1>
+      <ul class="movie-details"></ul>
+      <div class="movie-plot">
         {{ film.plot }}
       </div>
     </div>
   </div>
-
 </div>
+  <div class="m-row">
+    <button class="m-btn">Get new film</button>
+  </div>

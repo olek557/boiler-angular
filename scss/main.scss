@@ -26,7 +26,18 @@ body {
 }
 
 h1 {
-    font-size: 21px;
+    font-size: 28px;
+    margin-top: 0;
+    font-weight: 900;
+}
+
+.m-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: $orange;
+    color: #fff;
+    cursor: pointer;
 }
 
 .input-holder {
@@ -202,14 +213,18 @@ a {
     height: 450px;
 }
 
-.movie-desr {
+.movie-info {
     display: inline-block;
     float: right;
     width: calc(100% - 290px);
     padding: 25px;
     box-sizing: border-box;
-    .descr-text {
+}
 
+.movie-details {
+    display: block;
+    & > .movie-details--item {
+        display: inline-block;
     }
 }
 
