@@ -38,6 +38,7 @@ h1 {
     background-color: $orange;
     color: #fff;
     cursor: pointer;
+    border: none;
 }
 
 .input-holder {
@@ -209,8 +210,9 @@ a {
 
 .movie-item {
     width: 100%;
-    background-color: rgba(256, 256, 256, 1);
+    background-color: rgba(256, 256, 256, .6);
     height: 450px;
+    max-width: 800px;
 }
 
 .movie-info {
@@ -229,8 +231,9 @@ a {
 }
 
 .movie-poster {
-    width: 290px;
-    height: 450px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
     position: relative;
     overflow: hidden;
     display: inline-block;
@@ -250,4 +253,8 @@ a {
         top: 0;
         left: 0;
     }
+}
+
+.m-row {
+    margin-top: 20px;
 }

@@ -16,13 +16,17 @@
     </div>
     <div class="movie-info">
       <h1 class="movie-title">{{ film.title }}</h1>
-      <ul class="movie-details"></ul>
+      <ul class="movie-details">
+        <li>{{ film.genre }}</li>
+        <li>{{ film.year }}</li>
+        <li>{{ film.imdb_rating }}</li>
+      </ul>
       <div class="movie-plot">
         {{ film.plot }}
       </div>
     </div>
   </div>
-</div>
   <div class="m-row">
-    <button class="m-btn">Get new film</button>
+    <button class="m-btn" ng-click="adviser.getNewFilm()">Get new film</button>
   </div>
+</div>

@@ -1,24 +1,27 @@
-// 'use strict';
+var app = angular.module('myApp', []);
 
 
-    var app = angular.module('myApp', []);
-    var some = [];
+var getFilmLink = function() {
+    var rand = 1 + Math.floor(Math.random() * (100 + 1 - 1));
+    var film_link = "https://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/" + rand;
+    return film_link;
+}
 
-    app.controller('AdviserController', function($scope, $http) {
-        var film = this;
-        film.items = [];
-        film.items[0] = "Test";
-        var rand = 1 + Math.floor(Math.random() * (100 + 1 - 1));
-        var film_link = "https://134.249.116.199:3000/api/a96ed253-fb2c-4ff6-9e37-ff1c5935b7ca/movies/" + rand;
+app.controller('AdviserController', function($scope, $http) {
+    var requestFilmJSON = function() {
+        console.log("click"); 
+
         $scope.filmScope = [];
         // that.item;
-         $http.get( film_link )
+         $http.get( getFilmLink() )
             .then(function(responce){
                 $scope.film = responce.data;
-                console.log(responce.data);
+                console.log("I take JSON"); 
+                console.log(responce.data); 
             });
-    });
-    // app.controller('MainCntl', function($scope, $http) {
-
-    // });
-// });
+    }
+    requestFilmJSON();
+    this.getNewFilm = function() {
+        requestFilmJSON();
+    }
+});
