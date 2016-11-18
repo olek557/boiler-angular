@@ -9,7 +9,7 @@
 </div> -->
 
 <div ng-controller="AdviserController as adviser">
-  <div class="movie-item">
+  <div class="movie-item" ng-repeat="film in films">
     <div class="movie-poster">
       <img ng-src="{{ film.poster }}"/>
       <div class="overflow"></div>
@@ -17,15 +17,16 @@
     <div class="movie-info">
       <h1 class="movie-title">{{ film.title }}</h1>
       <ul class="movie-details">
-        <li>{{ film.genre }}</li>
-        <li>{{ film.year }}</li>
-        <li>{{ film.imdb_rating }}</li>
+        <li class="movie-details--item">{{ film.genre }}</li>
+        <li class="movie-details--item">{{ film.year }}</li>
+        <li class="movie-details--item">{{ film.imdb_rating }}</li>
       </ul>
       <div class="movie-plot">
         {{ film.plot }}
       </div>
     </div>
   </div>
+
   <div class="m-row">
     <button class="m-btn" ng-click="adviser.getNewFilm()">Get new film</button>
   </div>

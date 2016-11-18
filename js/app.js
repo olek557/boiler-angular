@@ -8,16 +8,15 @@ var getFilmLink = function() {
 }
 
 app.controller('AdviserController', function($scope, $http) {
+        $scope.films = [];
     var requestFilmJSON = function() {
         console.log("click"); 
 
-        $scope.filmScope = [];
         // that.item;
          $http.get( getFilmLink() )
             .then(function(responce){
-                $scope.film = responce.data;
-                console.log("I take JSON"); 
-                console.log(responce.data); 
+                $scope.films.push(responce.data);
+                console.log($scope.films); 
             });
     }
     requestFilmJSON();
